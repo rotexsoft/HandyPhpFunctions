@@ -1,0 +1,22 @@
+{
+    "name": "rotexsoft/handy-php-functions",
+    "type": "library",
+    "description": "A bunch of functions that either extend the existing functionality in native php functions or add functionality not available via native php functions.",
+    "keywords": [ "array", "arrays", "string", "strings", "functions", "number", "numbers", "numeric"],
+    "homepage": "https://github.com/rotexsoft/HandyPhpFunctions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rotimi Adegbamigbe",
+            "email": "rotexdegba007-github@yahoo.ca",
+            "homepage": "http://rotimis-corner.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": ["src/array-functions.php"]
+    }
+}
