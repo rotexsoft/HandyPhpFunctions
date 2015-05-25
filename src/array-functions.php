@@ -3,7 +3,7 @@ namespace Rotexsoft\HandyPhpFunctions;
 
 /**
  * 
- * This function generates an array with count($arr) === $max_array_length.
+ * This function generates an array with count($arr) <= $max_array_length.
  * It supports sub-arrays up to $depth levels deep and each sub-array can have
  * between 2 and $max_array_length elements. The generated array is not guaranteed 
  * to be symmetrical, some indices may have deeper level of nesting than others.
