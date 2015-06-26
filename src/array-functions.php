@@ -162,6 +162,18 @@ function recursively_copy_array(array &$array_from, array &$array_to, $reorder_n
 	 }
 }
 
+function array_get(array $array, $key, $default_value=null) {
+	
+	if( array_key_exists($key, $array) ) {
+		
+		return $array[$key];
+		
+	} else {
+		
+		return $default_value;
+	}
+}
+
 /*
 $new = array();
 recursively_copy_array($array['where'], $new);
