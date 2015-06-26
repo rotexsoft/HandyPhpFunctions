@@ -179,7 +179,7 @@ function array_get(array $array, $key, $default_value=null) {
  *  based on http://stackoverflow.com/questions/1019076/how-to-search-by-key-value-in-a-multidimensional-array-in-php
  * 
  */
-function search_r($array, $key, $value, &$results) {
+function search_r(&$array, $key, $value, &$results) {
 	
     if (!is_array($array)) {
         return;
