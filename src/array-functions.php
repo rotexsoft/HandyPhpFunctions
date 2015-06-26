@@ -196,6 +196,17 @@ function search_r(&$array, $key, $value, &$results) {
     }
 }
 
+function search_2d(&$array, $key, $value, &$results) {
+
+    foreach ($array as &$avalue) {
+    
+	    if ( array_key_exists($key, $avalue) && $avalue[$key] === $value) {
+	    
+	        $results[] =& $avalue;
+	    }
+    }
+}
+
 /*
 $new = array();
 recursively_copy_array($array['where'], $new);
