@@ -162,7 +162,7 @@ function recursively_copy_array(array &$array_from, array &$array_to, $reorder_n
 	 }
 }
 
-function array_get(array $array, $key, $default_value=null) {
+function array_get(array &$array, $key, $default_value=null) {
 	
 	if( array_key_exists($key, $array) ) {
 		
