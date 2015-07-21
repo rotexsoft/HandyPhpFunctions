@@ -40,43 +40,43 @@ namespace Rotexsoft\HandyPhpFunctions;
  */
 function create_n_dimensional_array_with_random_data(array &$arr, $depth, $max_array_length) {
 
-	static $list_of_chars;
-	static $size_of_list_of_chars;
+    static $list_of_chars;
+    static $size_of_list_of_chars;
 
-	if(!$list_of_chars) {
+    if(!$list_of_chars) {
 
-		$all_chars = array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9));
-		$list_of_chars = array_combine($all_chars, $all_chars);
-		$size_of_list_of_chars = count($list_of_chars) - 1;
-	}
+        $all_chars = array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9));
+        $list_of_chars = array_combine($all_chars, $all_chars);
+        $size_of_list_of_chars = count($list_of_chars) - 1;
+    }
 
-	$i = 0;
+    $i = 0;
 
-	while( $i < $max_array_length) {
+    while( $i < $max_array_length) {
 
-		//use int key
-		$key = $i;
+        //use int key
+        $key = $i;
 
-		if( rand(3, $size_of_list_of_chars) % 2 === 0 ) {
+        if( rand(3, $size_of_list_of_chars) % 2 === 0 ) {
 
-		   //use string key
-		   $key = implode ('', array_rand($list_of_chars , rand(2, $size_of_list_of_chars) ) );
-		}
+           //use string key
+           $key = implode ('', array_rand($list_of_chars , rand(2, $size_of_list_of_chars) ) );
+        }
 
-		if( rand(3, $size_of_list_of_chars) % 2 === 0 || $depth === 0) {
+        if( rand(3, $size_of_list_of_chars) % 2 === 0 || $depth === 0) {
 
-		   //set a string value
-		   $arr[$key] = implode ('', array_rand($list_of_chars , rand(3, 10) ) );
+           //set a string value
+           $arr[$key] = implode ('', array_rand($list_of_chars , rand(3, 10) ) );
 
-		} else {
+        } else {
 
-		   	//set an array value and recurse
-		   	$arr[$key] = array();
-		   	create_n_dimensional_array_with_random_data($arr[$key], ($depth -1), rand(2, $max_array_length) );
-		}
+            //set an array value and recurse
+            $arr[$key] = array();
+            create_n_dimensional_array_with_random_data($arr[$key], ($depth -1), rand(2, $max_array_length) );
+        }
 
-		$i++;
-	}
+        $i++;
+    }
 }
 
 /**
@@ -141,37 +141,37 @@ function create_n_dimensional_array_with_random_data(array &$arr, $depth, $max_a
  */
 function recursively_copy_array(array &$array_from, array &$array_to, $reorder_numeric_keys=false) {
 
-	$numeric_index = 0;
+    $numeric_index = 0;
 
-	 foreach($array_from as $key=>$value) {
+    foreach($array_from as $key=>$value) {
 
-			if( is_numeric($key) && $reorder_numeric_keys) {
+        if( is_numeric($key) && $reorder_numeric_keys) {
 
-				$key = $numeric_index++;
-			}
+            $key = $numeric_index++;
+        }
 
-			if( is_array($value)) {
+        if( is_array($value)) {
 
-				$array_to[$key] = array();
-				recursively_copy_array($value, $array_to[$key], $reorder_numeric_keys);
+            $array_to[$key] = array();
+            recursively_copy_array($value, $array_to[$key], $reorder_numeric_keys);
 
-			} else {
+        } else {
 
-				$array_to[$key] = $value;
-			}
-	 }
+            $array_to[$key] = $value;
+        }
+    }
 }
 
 function array_get(array &$array, $key, $default_value=null) {
 	
-	if( array_key_exists($key, $array) ) {
-		
-		return $array[$key];
-		
-	} else {
-		
-		return $default_value;
-	}
+    if( array_key_exists($key, $array) ) {
+
+        return $array[$key];
+
+    } else {
+
+        return $default_value;
+    }
 }
 
 /**
@@ -200,10 +200,10 @@ function search_2d(&$array, $key, $value, &$results) {
 
     foreach ($array as &$avalue) {
     
-	    if ( array_key_exists($key, $avalue) && $avalue[$key] === $value) {
-	    
-	        $results[] =& $avalue;
-	    }
+        if ( array_key_exists($key, $avalue) && $avalue[$key] === $value) {
+
+            $results[] = $avalue;
+        }
     }
 }
 
@@ -247,8 +247,6 @@ echo "Memory: " . (($mem2 - $mem) / 1024 / 1024) . " MB\n";
 var_dump($test_array === $new);
 
 echo "\n---------------------------------------------\n";
-
-
 
 $new2 = $test_array;//manual copy
 var_dump($new2 === $new);

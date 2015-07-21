@@ -4,7 +4,7 @@
     "description": "A bunch of functions that either extend the existing functionality in native php functions or add functionality not available via native php functions.",
     "keywords": [ "array", "arrays", "string", "strings", "functions", "number", "numbers", "numeric"],
     "homepage": "https://github.com/rotexsoft/HandyPhpFunctions",
-    "license": "MIT",
+    "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "Rotimi Adegbamigbe",
