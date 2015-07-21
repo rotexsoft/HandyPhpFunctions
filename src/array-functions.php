@@ -181,9 +181,7 @@ function array_get(array &$array, $key, $default_value=null) {
  */
 function search_r(&$array, $key, $value, &$results) {
 	
-    if (!is_array($array)) {
-        return;
-    }
+    if (!is_array($array)) { return; }
 
     if ( array_key_exists($key, $array) && $array[$key] === $value) {
     
