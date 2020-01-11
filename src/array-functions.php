@@ -195,6 +195,8 @@ function search_r(&$array, $key, $value, &$results) {
 }
 
 function search_2d(&$array, $key, $value, &$results) {
+	
+    if (!is_array($array)) { return; }
 
     foreach ($array as &$avalue) {
     
