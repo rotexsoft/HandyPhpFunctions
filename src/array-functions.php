@@ -256,4 +256,3 @@ array_unshift($new2, 'yipee');
 echo "Duration: " . (microtime(true) - $start2) . " secs\n";
 echo "Memory: " . ((memory_get_usage() - $mem2) / 1024 / 1024) . " MB\n";
 */
-?>
