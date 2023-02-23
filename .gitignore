@@ -16,3 +16,4 @@ nbproject/
 /nbproject/*.*
 /nbproject/*/
 composer.lock
+vendor
